@@ -15,7 +15,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-white/88 backdrop-blur-xl">
       <Container className="flex min-h-20 items-center justify-between gap-6">
-        <Link href="#top" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:var(--color-brand-700)] text-sm font-bold text-white">
             DA
           </div>
@@ -43,7 +43,7 @@ export function Navbar() {
 
         <div className="hidden lg:block">
           <Link
-            href="#apply"
+            href="/#apply"
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-800)]"
           >
             Apply Online
@@ -78,7 +78,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="#apply"
+            href="/#apply"
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-5 py-3 text-sm font-semibold text-white"
             onClick={() => setIsOpen(false)}
           >

@@ -97,46 +97,23 @@ export default function HomePage() {
                   Core facts
                 </p>
                 <div className="mt-6 space-y-5">
-                  <div className="flex items-start justify-between gap-4 border-b border-[color:var(--color-border)] pb-4">
-                    <span className="text-sm font-medium text-[color:var(--color-slate-600)]">
-                      Programme duration
-                    </span>
-                    <span className="text-right text-sm font-semibold text-[color:var(--color-slate-900)]">
-                      3 months
-                    </span>
-                  </div>
-                  <div className="flex items-start justify-between gap-4 border-b border-[color:var(--color-border)] pb-4">
-                    <span className="text-sm font-medium text-[color:var(--color-slate-600)]">
-                      Levels covered
-                    </span>
-                    <span className="text-right text-sm font-semibold text-[color:var(--color-slate-900)]">
-                      CEFR A1 to C2
-                    </span>
-                  </div>
-                  <div className="flex items-start justify-between gap-4 border-b border-[color:var(--color-border)] pb-4">
-                    <span className="text-sm font-medium text-[color:var(--color-slate-600)]">
-                      Fee
-                    </span>
-                    <span className="text-right text-sm font-semibold text-[color:var(--color-slate-900)]">
-                      50,000 CFA
-                    </span>
-                  </div>
-                  <div className="flex items-start justify-between gap-4 border-b border-[color:var(--color-border)] pb-4">
-                    <span className="text-sm font-medium text-[color:var(--color-slate-600)]">
-                      Weekly sessions
-                    </span>
-                    <span className="text-right text-sm font-semibold text-[color:var(--color-slate-900)]">
-                      2 per week for students and professionals
-                    </span>
-                  </div>
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="text-sm font-medium text-[color:var(--color-slate-600)]">
-                      Included
-                    </span>
-                    <span className="text-right text-sm font-semibold text-[color:var(--color-slate-900)]">
-                      Tests, certificates, student discounts
-                    </span>
-                  </div>
+                  {siteContent.programmeFacts.map((fact, index) => (
+                    <div
+                      key={fact.label}
+                      className={`flex items-start justify-between gap-4 pb-4 ${
+                        index < siteContent.programmeFacts.length - 1
+                          ? "border-b border-[color:var(--color-border)]"
+                          : "pb-0"
+                      }`}
+                    >
+                      <span className="text-sm font-medium text-[color:var(--color-slate-600)]">
+                        {fact.label}
+                      </span>
+                      <span className="text-right text-sm font-semibold text-[color:var(--color-slate-900)]">
+                        {fact.value}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </Card>
             </Reveal>
@@ -235,7 +212,7 @@ export default function HomePage() {
                     Adults improve faster when English is taught in context. D.A Language Academy connects grammar, vocabulary, and speaking practice to the situations learners actually face in study, work, and professional life.
                   </p>
                   <Link
-                    href="#apply"
+                    href="/#apply"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-brand-700)]"
                   >
                     Move toward application
