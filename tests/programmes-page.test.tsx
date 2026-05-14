@@ -17,7 +17,7 @@ describe("ProgrammesPage", () => {
     screen
       .getAllByRole("link", { name: /contact \/ apply/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/#apply");
+        expect(link).toHaveAttribute("href", "/contact");
       });
   });
 });

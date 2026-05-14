@@ -14,23 +14,22 @@ export const siteContent = {
     { label: "Learning Approach", href: "/learning-approach" },
     { label: "UK Coaching", href: "/uk-coaching-sessions" },
     { label: "Organisations", href: "/organisations" },
-    { label: "Contact / Apply", href: "/#apply" },
+    { label: "About", href: "/about" },
+    { label: "Contact / Apply", href: "/contact" },
   ],
   contact: {
     whatsappHref:
-      "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20English%20programmes.",
-    whatsappLabel: "Chat on WhatsApp",
+      "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20English%20programmes.",
+    whatsappLabel: "Apply via WhatsApp",
     phoneNumbers: [
-      { label: "+227 00 00 00 00", href: "tel:+22700000000" },
-      { label: "+227 00 00 00 01", href: "tel:+22700000001" },
+      { label: "+227 91 64 40 59", href: "tel:+22791644059" },
+      { label: "+227 89 40 64 82", href: "tel:+22789406482" },
     ],
     email: {
-      label: "contact@dalanguageacademy.com",
-      href: "mailto:contact@dalanguageacademy.com",
+      label: "dalanguageacademy@gmail.com",
+      href: "mailto:dalanguageacademy@gmail.com",
     },
-    locationLines: ["D.A Language Academy", "Niamey, Niger"],
-    placeholderNote:
-      "Replace the placeholder phone numbers, email address, and WhatsApp link with the academy's live contact details before launch.",
+    locationLines: ["Bobiel Première Pompe", "Niamey, Niger"],
   },
   hero: {
     eyebrow: "English training in Niamey",
@@ -45,7 +44,7 @@ export const siteContent = {
     primaryCta: {
       label: "Apply via WhatsApp",
       href:
-        "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20want%20to%20apply%20for%20the%203-month%20English%20programme.",
+        "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20want%20to%20apply%20for%20the%203-month%20English%20programme.",
     },
     secondaryCta: {
       label: "Explore Programmes",
@@ -259,7 +258,7 @@ export const siteContent = {
       primaryAction: {
         label: "Apply via WhatsApp",
         href:
-          "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20join%20the%20programme%20and%20learn%20more%20about%20the%20UK-based%20coaching%20sessions.",
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20join%20the%20programme%20and%20learn%20more%20about%20the%20UK-based%20coaching%20sessions.",
       },
       secondaryAction: {
         label: "View Programmes",
@@ -322,7 +321,7 @@ export const siteContent = {
       primaryAction: {
         label: "Apply via WhatsApp",
         href:
-          "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20and%20learn%20more%20about%20the%20UK%20coaching%20sessions.",
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20and%20learn%20more%20about%20the%20UK%20coaching%20sessions.",
       },
       secondaryAction: {
         label: "View Programmes",
@@ -338,11 +337,11 @@ export const siteContent = {
         "D.A Language Academy supports adult and professional English development for individuals and teams who need stronger communication for study, work, institutional collaboration, and international engagement.",
       primaryAction: {
         label: "Discuss Organisation Training",
-        href: "/#apply",
+        href: "/contact",
       },
       secondaryAction: {
         label: "Contact / Apply",
-        href: "/#apply",
+        href: "/contact",
       },
       stats: [
         { value: "Professional Tone", label: "Adult-focused learning environment" },
@@ -402,27 +401,193 @@ export const siteContent = {
         "Use the existing contact route to discuss organisation training, learner needs, or individual application next steps.",
       primaryAction: {
         label: "Discuss Organisation Training",
-        href: "/#apply",
+        href: "/contact",
       },
       secondaryAction: {
         label: "Contact / Apply",
-        href: "/#apply",
+        href: "/contact",
       },
+    },
+  },
+  aboutPage: {
+    hero: {
+      eyebrow: "About",
+      title: "About D.A Language Academy",
+      description:
+        "D.A Language Academy is a practical English academy based in Niamey, Niger, helping serious learners build more confident English communication for study, work, and international opportunities.",
+      primaryAction: {
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
+      },
+      secondaryAction: {
+        label: "View Programmes",
+        href: "/programmes",
+      },
+      stats: [
+        { value: "2022", label: "Academy established" },
+        { value: "Niamey, Niger", label: "Local base with international outlook" },
+        { value: "A1-C2", label: "CEFR-based structure" },
+        { value: "3 Months", label: "Focused programme pathway" },
+      ],
+    },
+    intro: {
+      eyebrow: "Intro",
+      title: "A practical English academy for serious learners in Niamey.",
+      description:
+        "Established in 2022 and based in Niamey, Niger, the academy focuses on structured, adult-oriented English training for university students, professionals, adult learners, NGOs, and organisations that value real communication progress.",
+    },
+    mission: {
+      eyebrow: "Mission",
+      title: "Helping learners communicate with more confidence in academic, professional, and international contexts.",
+      description:
+        "D.A Language Academy exists to help learners communicate more confidently in English for academic, professional and international contexts through practical training, CEFR-based progression, and repeated communication practice.",
+    },
+    differentiators: {
+      eyebrow: "What makes us different",
+      title: "A learning model built around structure, practicality, and wider communication exposure.",
+      description:
+        "The academy combines a clear learning pathway with practical methods and international speaking opportunities that make progress feel purposeful.",
+      items: [
+        "Structured CEFR pathway from A1 to C2",
+        "Practical real-world learning, not theory alone",
+        "Weekly UK-based online discussion sessions",
+        "Support for students and professionals",
+        "Tests and certificates included",
+      ],
+    },
+    values: {
+      eyebrow: "Values",
+      title: "The principles that shape the learner experience.",
+      description:
+        "The academy emphasizes steady progress, professionalism, and confident communication that learners can actually use.",
+      items: [
+        "Confidence",
+        "Structure",
+        "Practical communication",
+        "International exposure",
+        "Progress",
+      ],
+    },
+    skillsSection: {
+      eyebrow: "Five core skills",
+      title: "A complete English foundation for clearer communication.",
+      description:
+        "The programme develops listening, speaking, reading, writing, and grammar together so learners improve with balance and direction.",
+    },
+    cta: {
+      eyebrow: "Start your pathway",
+      title: "Start your 3-month pathway to more confident English communication.",
+      description:
+        "Take the next step through WhatsApp or review the programme structure before applying.",
+      primaryAction: {
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
+      },
+      secondaryAction: {
+        label: "View Programmes",
+        href: "/programmes",
+      },
+    },
+  },
+  contactPage: {
+    hero: {
+      eyebrow: "Contact / Apply",
+      title: "Contact / Apply",
+      description:
+        "Apply, ask questions, or speak with D.A Language Academy about the English programme that fits your goals and current level.",
+      primaryAction: {
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20or%20ask%20a%20question%20about%20your%20English%20programmes.",
+      },
+      secondaryAction: {
+        label: "Email the Academy",
+        href: "mailto:dalanguageacademy@gmail.com",
+      },
+      stats: [
+        { value: "WhatsApp", label: "Fastest way to start the conversation" },
+        {
+          value: "Call the Academy",
+          label: "+227 91 64 40 59 / +227 89 40 64 82",
+        },
+        {
+          value: "Email the Academy",
+          label: "dalanguageacademy@gmail.com",
+        },
+        { value: "Bobiel Première Pompe", label: "Niamey location" },
+      ],
+    },
+    intro: {
+      eyebrow: "Get in touch",
+      title: "Choose the contact method that feels most convenient.",
+      description:
+        "Visitors can reach the academy by WhatsApp, phone, email, location visit, or by using the frontend-only enquiry form below.",
+    },
+    methods: [
+      {
+        title: "WhatsApp",
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20or%20ask%20a%20question%20about%20your%20English%20programmes.",
+        description: "Start a quick conversation about programmes, levels, or application guidance.",
+      },
+      {
+        title: "Phone",
+        label: "+227 91 64 40 59 / +227 89 40 64 82",
+        href: "tel:+22791644059",
+        description: "Call the academy directly for practical information and next-step guidance.",
+      },
+      {
+        title: "Email",
+        label: "dalanguageacademy@gmail.com",
+        href: "mailto:dalanguageacademy@gmail.com",
+        description: "Use email for questions, enquiries, or professional communication needs.",
+      },
+      {
+        title: "Location",
+        label: "Bobiel Première Pompe, Niamey",
+        href: "",
+        description: "Visit or reference the academy location when planning contact or local enquiries.",
+      },
+    ],
+    form: {
+      learnerTypes: [
+        "University Student",
+        "Working Professional",
+        "Adult Learner",
+        "Organisation / NGO",
+        "Other",
+      ],
+      programmeInterests: [
+        "Beginner English",
+        "General English",
+        "Professional English",
+        "Exam / Certificate Preparation",
+        "Organisation Training",
+        "Not sure yet",
+      ],
+      preferredContactMethods: ["WhatsApp", "Phone Call", "Email"],
+      submitMessage:
+        "Thank you. Online form submission will be connected soon. For now, please contact D.A Language Academy directly by WhatsApp, phone or email.",
+      guidanceNote:
+        "Not sure which level is right for you? Contact us and we will guide you.",
     },
   },
   applyCta: {
     eyebrow: "Apply online",
     title: "Start your next stage in English with a clear and practical first step.",
     description:
-      "Phase 1 keeps the main contact actions simple: WhatsApp, phone, and email. The full application page and submission flow will be connected in Phase 2.",
+      "Use WhatsApp, phone, email, or the dedicated Contact / Apply page to begin your next step with the academy.",
     primaryAction: {
       label: "Contact on WhatsApp",
       href:
-        "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
+        "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
     },
     secondaryAction: {
       label: "Email the Academy",
-      href: "mailto:contact@dalanguageacademy.com",
+      href: "mailto:dalanguageacademy@gmail.com",
     },
   },
   programmesPage: {
@@ -433,7 +598,7 @@ export const siteContent = {
         "A premium 3-month programme for students, professionals, adult learners, and organisations who want measurable growth in confident English communication.",
       primaryAction: {
         label: "Contact / Apply",
-        href: "/#apply",
+        href: "/contact",
       },
       secondaryAction: {
         label: "Learning Approach",
@@ -471,12 +636,12 @@ export const siteContent = {
         "Use WhatsApp, phone, or email to begin the conversation while the full Contact / Apply experience is expanded in the next phase.",
       primaryAction: {
         label: "Contact / Apply",
-        href: "/#apply",
+        href: "/contact",
       },
       secondaryAction: {
         label: "Apply via WhatsApp",
         href:
-          "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
       },
     },
   },
@@ -492,7 +657,7 @@ export const siteContent = {
       },
       secondaryAction: {
         label: "Contact / Apply",
-        href: "/#apply",
+        href: "/contact",
       },
       stats: [
         { value: "5 Skills", label: "Listening, speaking, reading, writing, grammar" },
@@ -530,7 +695,7 @@ export const siteContent = {
       },
       secondaryAction: {
         label: "Contact / Apply",
-        href: "/#apply",
+        href: "/contact",
       },
     },
   },

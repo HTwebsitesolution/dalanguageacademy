@@ -212,7 +212,7 @@ export default function HomePage() {
                     Adults improve faster when English is taught in context. D.A Language Academy connects grammar, vocabulary, and speaking practice to the situations learners actually face in study, work, and professional life.
                   </p>
                   <Link
-                    href="/#apply"
+                    href="/contact"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-brand-700)]"
                   >
                     Move toward application

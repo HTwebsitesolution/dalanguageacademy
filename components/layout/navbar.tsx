@@ -43,7 +43,7 @@ export function Navbar() {
 
         <div className="hidden lg:block">
           <Link
-            href="/#apply"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-800)]"
           >
             Apply Online
@@ -78,7 +78,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/#apply"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-5 py-3 text-sm font-semibold text-white"
             onClick={() => setIsOpen(false)}
           >

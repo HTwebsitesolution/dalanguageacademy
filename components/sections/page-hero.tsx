@@ -83,10 +83,12 @@ export function PageHero({
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-4"
+                    className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-4"
                   >
-                    <p className="text-2xl font-semibold text-white">{stat.value}</p>
-                    <p className="mt-2 text-sm leading-6 text-white/70">
+                    <p className="break-words text-xl font-semibold leading-tight text-white sm:text-2xl">
+                      {stat.value}
+                    </p>
+                    <p className="mt-2 break-words text-sm leading-6 text-white/70">
                       {stat.label}
                     </p>
                   </div>

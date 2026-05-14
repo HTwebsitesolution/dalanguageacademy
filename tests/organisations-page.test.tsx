@@ -22,12 +22,12 @@ describe("OrganisationsPage", () => {
     screen
       .getAllByRole("link", { name: /discuss organisation training/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/#apply");
+        expect(link).toHaveAttribute("href", "/contact");
       });
     screen
       .getAllByRole("link", { name: /contact \/ apply/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/#apply");
+        expect(link).toHaveAttribute("href", "/contact");
       });
   });
 });

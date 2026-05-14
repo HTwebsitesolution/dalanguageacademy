@@ -20,10 +20,13 @@ describe("Navbar", () => {
     screen.getAllByRole("link", { name: "Organisations" }).forEach((link) => {
       expect(link).toHaveAttribute("href", "/organisations");
     });
+    screen.getAllByRole("link", { name: "About" }).forEach((link) => {
+      expect(link).toHaveAttribute("href", "/about");
+    });
     screen
       .getAllByRole("link", { name: "Contact / Apply" })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/#apply");
+        expect(link).toHaveAttribute("href", "/contact");
       });
   });
 });
