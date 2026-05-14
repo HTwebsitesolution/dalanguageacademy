@@ -14,6 +14,12 @@ describe("Navbar", () => {
       .forEach((link) => {
         expect(link).toHaveAttribute("href", "/learning-approach");
       });
+    screen.getAllByRole("link", { name: "UK Coaching" }).forEach((link) => {
+      expect(link).toHaveAttribute("href", "/uk-coaching-sessions");
+    });
+    screen.getAllByRole("link", { name: "Organisations" }).forEach((link) => {
+      expect(link).toHaveAttribute("href", "/organisations");
+    });
     screen
       .getAllByRole("link", { name: "Contact / Apply" })
       .forEach((link) => {

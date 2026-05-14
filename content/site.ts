@@ -12,8 +12,8 @@ export const siteContent = {
     { label: "Home", href: "/" },
     { label: "Programmes", href: "/programmes" },
     { label: "Learning Approach", href: "/learning-approach" },
-    { label: "UK Coaching", href: "/#uk-coaching" },
-    { label: "Organisations", href: "/#organisations" },
+    { label: "UK Coaching", href: "/uk-coaching-sessions" },
+    { label: "Organisations", href: "/organisations" },
     { label: "Contact / Apply", href: "/#apply" },
   ],
   contact: {
@@ -250,6 +250,166 @@ export const siteContent = {
       "A strong foundation for future dedicated organisation pages and enquiry flows",
     ],
   },
+  ukCoachingPage: {
+    hero: {
+      eyebrow: "UK Coaching Sessions",
+      title: "Weekly online speaking sessions with UK-based coaches",
+      description:
+        "Students have the opportunity to join online discussion sessions with coaches in the United Kingdom once a week, extending classroom learning into live international communication practice.",
+      primaryAction: {
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20join%20the%20programme%20and%20learn%20more%20about%20the%20UK-based%20coaching%20sessions.",
+      },
+      secondaryAction: {
+        label: "View Programmes",
+        href: "/programmes",
+      },
+      stats: [
+        { value: "Weekly", label: "Online discussion opportunity" },
+        { value: "UK-Based Coaches", label: "International speaking exposure" },
+        { value: "Live Conversation", label: "Practice beyond classroom sessions" },
+        { value: "Confidence Growth", label: "Speaking and pronunciation support" },
+      ],
+    },
+    benefitsSection: {
+      eyebrow: "Why it matters",
+      title: "A richer speaking experience that extends English beyond the classroom.",
+      description:
+        "These sessions are designed to increase speaking confidence and expose learners to more natural, international English communication in a guided setting.",
+    },
+    benefits: [
+      "Build speaking confidence",
+      "Improve pronunciation",
+      "Practise real conversation",
+      "Experience English beyond the classroom",
+      "Gain exposure to international communication",
+    ],
+    onlineSession: {
+      eyebrow: "Modern online session",
+      title: "A live conversation format that feels current, interactive, and professionally guided.",
+      description:
+        "Learners join a structured online discussion experience that complements their regular English programme and gives them more space to speak, listen, and respond with confidence.",
+      sessionTags: [
+        "Live weekly discussion",
+        "Coach-led conversation",
+        "Small-group speaking feel",
+        "Real feedback moments",
+      ],
+      sessionPoints: [
+        "Join from your phone or computer",
+        "Speak with UK-based coaches in a guided online setting",
+        "Receive useful feedback and encouragement during discussion",
+      ],
+    },
+    howItWorks: {
+      eyebrow: "How it works",
+      title: "A simple progression from classroom learning to live international practice.",
+      description:
+        "The online coaching opportunity supports the wider programme without making the learner journey feel complex or overwhelming.",
+      steps: [
+        "Join your regular English programme",
+        "Attend weekly classroom sessions",
+        "Join online discussion with UK-based coaches",
+        "Practise, receive feedback and grow in confidence",
+      ],
+    },
+    cta: {
+      eyebrow: "Next step",
+      title: "Continue your English growth with both structured learning and live speaking exposure.",
+      description:
+        "Use WhatsApp to start the conversation or review the main programme structure before applying.",
+      primaryAction: {
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22700000000?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20and%20learn%20more%20about%20the%20UK%20coaching%20sessions.",
+      },
+      secondaryAction: {
+        label: "View Programmes",
+        href: "/programmes",
+      },
+    },
+  },
+  organisationsPage: {
+    hero: {
+      eyebrow: "Organisations",
+      title: "English training suited to professionals, NGOs, institutions and organisations.",
+      description:
+        "D.A Language Academy supports adult and professional English development for individuals and teams who need stronger communication for study, work, institutional collaboration, and international engagement.",
+      primaryAction: {
+        label: "Discuss Organisation Training",
+        href: "/#apply",
+      },
+      secondaryAction: {
+        label: "Contact / Apply",
+        href: "/#apply",
+      },
+      stats: [
+        { value: "Professional Tone", label: "Adult-focused learning environment" },
+        { value: "NGO-Relevant", label: "English for international work contexts" },
+        { value: "Institution-Friendly", label: "Suitable for structured team learning" },
+        { value: "Custom Enquiries", label: "Open to training discussions and planning" },
+      ],
+    },
+    credibility: {
+      eyebrow: "Credibility",
+      title: "Careful positioning for respected organisations and institutions.",
+      description:
+        "D.A Language Academy has worked with learners and professionals connected to respected organisations and institutions, including international NGOs and higher education institutions.",
+      note: "Organisation names are included for context only and do not imply official endorsement.",
+      names: [
+        "RESCUE",
+        "Danish Refugee Council",
+        "Save the Children",
+        "IOM International",
+        "ETEC",
+        "ESPA",
+        "EPI",
+      ],
+    },
+    serviceAreas: {
+      eyebrow: "Training focus areas",
+      title: "English support that aligns with professional and institutional realities.",
+      description:
+        "The academy can support learners and teams who need clearer communication in professional, NGO, and institutional environments.",
+      items: [
+        {
+          title: "English for professional communication",
+          description:
+            "Support clearer workplace communication for meetings, presentations, reports, and day-to-day professional exchanges.",
+        },
+        {
+          title: "English for NGO and international work",
+          description:
+            "Help learners strengthen the language confidence needed for collaboration, reporting, coordination, and cross-cultural communication.",
+        },
+        {
+          title: "English for institutional teams",
+          description:
+            "Provide a learning approach suitable for staff groups, academic environments, and institution-linked professional development.",
+        },
+        {
+          title: "Custom training enquiries",
+          description:
+            "Open discussions for organisations exploring tailored English training needs, formats, and learner priorities.",
+        },
+      ],
+    },
+    cta: {
+      eyebrow: "Organisation enquiry",
+      title: "Start a practical conversation about English training for your team or institution.",
+      description:
+        "Use the existing contact route to discuss organisation training, learner needs, or individual application next steps.",
+      primaryAction: {
+        label: "Discuss Organisation Training",
+        href: "/#apply",
+      },
+      secondaryAction: {
+        label: "Contact / Apply",
+        href: "/#apply",
+      },
+    },
+  },
   applyCta: {
     eyebrow: "Apply online",
     title: "Start your next stage in English with a clear and practical first step.",
@@ -328,7 +488,7 @@ export const siteContent = {
         "D.A Language Academy teaches English through guided exposure, real practice, and meaningful content so learners can build confidence across listening, speaking, reading, writing, and grammar.",
       primaryAction: {
         label: "UK Coaching Sessions",
-        href: "/#uk-coaching",
+        href: "/uk-coaching-sessions",
       },
       secondaryAction: {
         label: "Contact / Apply",
@@ -366,7 +526,7 @@ export const siteContent = {
         "After understanding the learning approach, visitors can explore the UK coaching angle or move directly to contact and application actions.",
       primaryAction: {
         label: "UK Coaching Sessions",
-        href: "/#uk-coaching",
+        href: "/uk-coaching-sessions",
       },
       secondaryAction: {
         label: "Contact / Apply",

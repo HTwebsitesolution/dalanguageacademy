@@ -13,7 +13,7 @@ describe("LearningApproachPage", () => {
     screen
       .getAllByRole("link", { name: /uk coaching sessions/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/#uk-coaching");
+        expect(link).toHaveAttribute("href", "/uk-coaching-sessions");
       });
     screen
       .getAllByRole("link", { name: /contact \/ apply/i })
