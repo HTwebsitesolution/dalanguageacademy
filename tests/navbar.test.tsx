@@ -14,7 +14,7 @@ describe("Navbar", () => {
       .forEach((link) => {
         expect(link).toHaveAttribute("href", "/learning-approach");
       });
-    screen.getAllByRole("link", { name: "UK Coaching" }).forEach((link) => {
+    screen.getAllByRole("link", { name: "UK Coaching Sessions" }).forEach((link) => {
       expect(link).toHaveAttribute("href", "/uk-coaching-sessions");
     });
     screen.getAllByRole("link", { name: "Organisations" }).forEach((link) => {
@@ -27,6 +27,11 @@ describe("Navbar", () => {
       .getAllByRole("link", { name: "Contact / Apply" })
       .forEach((link) => {
         expect(link).toHaveAttribute("href", "/contact");
+      });
+    screen
+      .getAllByRole("link", { name: "Apply via WhatsApp" })
+      .forEach((link) => {
+        expect(link.getAttribute("href")).toContain("wa.me/");
       });
   });
 });

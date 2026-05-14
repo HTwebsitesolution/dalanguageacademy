@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -9,13 +10,23 @@ import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
+import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
 const audienceIcons = [GraduationCap, BriefcaseBusiness, Users, Building2];
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Home",
+  description:
+    "Practical English language training in Niamey for students, professionals and organisations. CEFR-based 3-month programmes with weekly online discussion sessions with UK-based coaches.",
+  path: "/",
+});
 
 export default function HomePage() {
   return (
@@ -40,6 +51,28 @@ export default function HomePage() {
                 <div className="rounded-[1.5rem] bg-[color:var(--color-brand-50)] px-4 py-5 text-center text-sm font-semibold text-[color:var(--color-brand-700)]">
                   {item}
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <MediaFeature {...siteContent.placeholderContent.homeMedia} />
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <Reveal>
+            <SectionHeader
+              eyebrow="Future learner stories"
+              title="Prepared space for testimonials and proof later."
+              description="This section is already positioned for future learner stories and professional proof without forcing placeholder testimonials into the current live copy."
+            />
+          </Reveal>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {siteContent.placeholderContent.homeTestimonials.map((testimonial, index) => (
+              <Reveal key={testimonial.context} delay={index * 0.05}>
+                <TestimonialCard {...testimonial} />
               </Reveal>
             ))}
           </div>
@@ -215,7 +248,7 @@ export default function HomePage() {
                     href="/contact"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-brand-700)]"
                   >
-                    Move toward application
+                    Contact / Apply
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Card>

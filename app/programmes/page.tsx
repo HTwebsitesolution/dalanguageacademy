@@ -2,17 +2,20 @@ import type { Metadata } from "next";
 
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
+import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Programmes",
   description:
-    "Explore the D.A Language Academy 3-month English programme, CEFR pathway, schedules, and application route.",
-};
+    "Explore practical CEFR-based English programmes in Niamey with a 3-month structure, tests, certificates, and support for students and professionals.",
+  path: "/programmes",
+});
 
 export default function ProgrammesPage() {
   const { programmesPage } = siteContent;
@@ -47,9 +50,9 @@ export default function ProgrammesPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-600)]">
                     {stage.level}
                   </p>
-                  <h2 className="mt-4 text-2xl font-semibold text-[color:var(--color-slate-900)]">
+                  <h3 className="mt-4 text-2xl font-semibold text-[color:var(--color-slate-900)]">
                     {stage.title}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-base leading-7 text-[color:var(--color-slate-600)]">
                     {stage.description}
                   </p>
@@ -59,6 +62,8 @@ export default function ProgrammesPage() {
           </div>
         </Container>
       </section>
+
+      <MediaFeature {...siteContent.placeholderContent.programmesMedia} />
 
       <section className="py-16 sm:py-20">
         <Container>

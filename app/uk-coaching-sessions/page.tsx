@@ -7,12 +7,14 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "UK Coaching Sessions",
   description:
-    "See how D.A Language Academy supports weekly online speaking sessions with UK-based coaches for more confident English communication.",
-};
+    "Weekly online speaking sessions with UK-based coaches that help learners build speaking confidence, pronunciation, and international communication exposure.",
+  path: "/uk-coaching-sessions",
+});
 
 export default function UKCoachingSessionsPage() {
   const { ukCoachingPage } = siteContent;
@@ -48,9 +50,9 @@ export default function UKCoachingSessionsPage() {
                         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--color-brand-700)]">
                           Benefit {index + 1}
                         </p>
-                        <h2 className="mt-4 text-xl font-semibold text-[color:var(--color-slate-900)]">
+                        <h3 className="mt-4 text-xl font-semibold text-[color:var(--color-slate-900)]">
                           {benefit}
-                        </h2>
+                        </h3>
                       </Card>
                     </Reveal>
                   ))}
@@ -114,6 +116,10 @@ export default function UKCoachingSessionsPage() {
                       </div>
                     ))}
                   </div>
+
+                  <p className="mt-5 text-xs leading-6 text-white/50">
+                    Future media slot: this visual can later be paired with a real online session still or coaching screenshot.
+                  </p>
                 </div>
               </Card>
             </Reveal>

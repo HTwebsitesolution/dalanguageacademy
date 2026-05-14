@@ -7,7 +7,7 @@ import { Container } from "../ui/container";
 export function Footer() {
   return (
     <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-slate-950)] py-14 text-white">
-      <Container className="grid gap-10 md:grid-cols-[1.1fr_0.8fr_0.9fr]">
+      <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.8fr_0.9fr]">
         <div className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--color-gold-300)]">
             {siteContent.brand.name}
@@ -45,7 +45,7 @@ export function Footer() {
           <div className="space-y-3 text-sm text-white/75">
             {siteContent.contact.phoneNumbers.map((phone) => (
               <p key={phone.href}>
-                <Link href={phone.href} className="transition hover:text-white">
+                <Link href={phone.href} className="break-words transition hover:text-white">
                   {phone.label}
                 </Link>
               </p>
@@ -53,7 +53,7 @@ export function Footer() {
             <p>
               <Link
                 href={siteContent.contact.email.href}
-                className="transition hover:text-white"
+                className="break-words transition hover:text-white"
               >
                 {siteContent.contact.email.label}
               </Link>

@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { siteContent } from "@/content/site";
@@ -11,6 +12,7 @@ import { Container } from "../ui/container";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--color-border)] bg-white/88 backdrop-blur-xl">
@@ -29,31 +31,37 @@ export function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-7 xl:flex">
           {siteContent.navigation.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-[color:var(--color-slate-600)] transition hover:text-[color:var(--color-brand-700)]"
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={cn(
+                "text-sm font-medium transition hover:text-[color:var(--color-brand-700)]",
+                pathname === item.href
+                  ? "text-[color:var(--color-brand-700)]"
+                  : "text-[color:var(--color-slate-600)]",
+              )}
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link
-            href="/contact"
+            href={siteContent.contact.whatsappHref}
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-800)]"
           >
-            Apply Online
+            Apply via WhatsApp
           </Link>
         </div>
 
         <button
           type="button"
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border-strong)] text-[color:var(--color-slate-900)] lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border-strong)] text-[color:var(--color-slate-900)] xl:hidden"
           onClick={() => setIsOpen((value) => !value)}
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -62,27 +70,33 @@ export function Navbar() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-[color:var(--color-border)] bg-white transition-[max-height] duration-300 lg:hidden",
-          isOpen ? "max-h-96" : "max-h-0",
+          "overflow-hidden border-t border-[color:var(--color-border)] bg-white transition-[max-height] duration-300 xl:hidden",
+          isOpen ? "max-h-[36rem]" : "max-h-0",
         )}
       >
-        <Container className="flex flex-col gap-5 py-5">
+        <Container aria-label="Mobile navigation" className="flex flex-col gap-5 py-5">
           {siteContent.navigation.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-[color:var(--color-slate-700)]"
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={cn(
+                "text-sm font-medium",
+                pathname === item.href
+                  ? "text-[color:var(--color-brand-700)]"
+                  : "text-[color:var(--color-slate-700)]",
+              )}
               onClick={() => setIsOpen(false)}
             >
               {item.label}
             </Link>
           ))}
           <Link
-            href="/contact"
+            href={siteContent.contact.whatsappHref}
             className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-5 py-3 text-sm font-semibold text-white"
             onClick={() => setIsOpen(false)}
           >
-            Apply Online
+            Apply via WhatsApp
           </Link>
         </Container>
       </div>

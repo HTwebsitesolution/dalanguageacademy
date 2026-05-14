@@ -41,6 +41,7 @@ body {
     linear-gradient(180deg, #ffffff, #f8fafc 100%);
   color: var(--color-slate-900);
   font-family: var(--font-body-source), sans-serif;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
 }
 
@@ -62,4 +63,10 @@ a:focus-visible,
 button:focus-visible {
   outline: 3px solid rgba(53, 95, 170, 0.3);
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

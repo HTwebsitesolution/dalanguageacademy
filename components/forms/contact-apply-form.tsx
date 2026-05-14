@@ -143,6 +143,7 @@ export function ContactApplyForm({
       {feedbackMessage ? (
         <div
           role="status"
+          aria-live="polite"
           className="rounded-2xl border border-[color:var(--color-brand-200)] bg-[color:var(--color-brand-50)] px-4 py-4 text-sm leading-7 text-[color:var(--color-brand-800)]"
         >
           {feedbackMessage}

@@ -2,17 +2,20 @@ import type { Metadata } from "next";
 
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
+import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "About",
   description:
     "Learn about D.A Language Academy, its mission, values, CEFR-based structure, and practical English training approach in Niamey.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   const { aboutPage } = siteContent;
@@ -56,9 +59,9 @@ export default function AboutPage() {
                       key={audience.title}
                       className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-slate-50)] px-4 py-4"
                     >
-                      <h2 className="text-lg font-semibold text-[color:var(--color-slate-900)]">
+                      <h3 className="text-lg font-semibold text-[color:var(--color-slate-900)]">
                         {audience.title}
-                      </h2>
+                      </h3>
                       <p className="mt-2 text-sm leading-7 text-[color:var(--color-slate-600)]">
                         {audience.description}
                       </p>
@@ -70,6 +73,8 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <MediaFeature {...siteContent.placeholderContent.aboutMedia} />
 
       <section className="py-16 sm:py-20">
         <Container>
@@ -88,9 +93,9 @@ export default function AboutPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--color-gold-600)]">
                     Point {index + 1}
                   </p>
-                  <h2 className="mt-4 text-xl font-semibold text-[color:var(--color-slate-900)]">
+                  <h3 className="mt-4 text-xl font-semibold text-[color:var(--color-slate-900)]">
                     {item}
-                  </h2>
+                  </h3>
                 </Card>
               </Reveal>
             ))}
@@ -119,9 +124,9 @@ export default function AboutPage() {
                     <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--color-brand-700)]">
                       Value {index + 1}
                     </p>
-                    <h2 className="mt-4 text-xl font-semibold text-[color:var(--color-slate-900)]">
+                    <h3 className="mt-4 text-xl font-semibold text-[color:var(--color-slate-900)]">
                       {value}
-                    </h2>
+                    </h3>
                   </Card>
                 </Reveal>
               ))}
@@ -148,9 +153,9 @@ export default function AboutPage() {
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[color:var(--color-brand-700)] text-lg font-semibold text-white">
                     {skill.title.charAt(0)}
                   </div>
-                  <h2 className="mt-5 text-xl font-semibold text-[color:var(--color-slate-900)]">
+                  <h3 className="mt-5 text-xl font-semibold text-[color:var(--color-slate-900)]">
                     {skill.title}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-[color:var(--color-slate-600)]">
                     {skill.description}
                   </p>

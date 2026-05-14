@@ -12,7 +12,7 @@ export const siteContent = {
     { label: "Home", href: "/" },
     { label: "Programmes", href: "/programmes" },
     { label: "Learning Approach", href: "/learning-approach" },
-    { label: "UK Coaching", href: "/uk-coaching-sessions" },
+    { label: "UK Coaching Sessions", href: "/uk-coaching-sessions" },
     { label: "Organisations", href: "/organisations" },
     { label: "About", href: "/about" },
     { label: "Contact / Apply", href: "/contact" },
@@ -261,7 +261,7 @@ export const siteContent = {
           "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20join%20the%20programme%20and%20learn%20more%20about%20the%20UK-based%20coaching%20sessions.",
       },
       secondaryAction: {
-        label: "View Programmes",
+        label: "Explore Programmes",
         href: "/programmes",
       },
       stats: [
@@ -324,7 +324,7 @@ export const siteContent = {
           "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20and%20learn%20more%20about%20the%20UK%20coaching%20sessions.",
       },
       secondaryAction: {
-        label: "View Programmes",
+        label: "Explore Programmes",
         href: "/programmes",
       },
     },
@@ -421,7 +421,7 @@ export const siteContent = {
           "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
       },
       secondaryAction: {
-        label: "View Programmes",
+        label: "Explore Programmes",
         href: "/programmes",
       },
       stats: [
@@ -486,7 +486,7 @@ export const siteContent = {
           "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
       },
       secondaryAction: {
-        label: "View Programmes",
+        label: "Explore Programmes",
         href: "/programmes",
       },
     },
@@ -574,6 +574,16 @@ export const siteContent = {
       guidanceNote:
         "Not sure which level is right for you? Contact us and we will guide you.",
     },
+    mediaFeature: {
+      eyebrow: "Future location image",
+      title: "Prepared space for an academy entrance or location visual.",
+      description:
+        "This gives the contact page a ready-made spot for a future location image without adding a separate gallery or redesigning the page.",
+      placeholderLabel: "Academy entrance or location photo placeholder",
+      altTextHint:
+        'Suggested alt text later: "Entrance or exterior of D.A Language Academy near Bobiel Première Pompe in Niamey."',
+      note: "Best later use: academy entrance, reception area, or a recognizable nearby landmark image.",
+    },
   },
   applyCta: {
     eyebrow: "Apply online",
@@ -581,13 +591,13 @@ export const siteContent = {
     description:
       "Use WhatsApp, phone, email, or the dedicated Contact / Apply page to begin your next step with the academy.",
     primaryAction: {
-      label: "Contact on WhatsApp",
+      label: "Apply via WhatsApp",
       href:
         "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
     },
     secondaryAction: {
-      label: "Email the Academy",
-      href: "mailto:dalanguageacademy@gmail.com",
+      label: "Explore Programmes",
+      href: "/programmes",
     },
   },
   programmesPage: {
@@ -632,16 +642,15 @@ export const siteContent = {
     cta: {
       eyebrow: "Contact / Apply",
       title: "Take the next step toward more confident English communication.",
-      description:
-        "Use WhatsApp, phone, or email to begin the conversation while the full Contact / Apply experience is expanded in the next phase.",
+      description: "Choose the fastest route to begin your programme conversation or review the offer again before applying.",
       primaryAction: {
-        label: "Contact / Apply",
-        href: "/contact",
-      },
-      secondaryAction: {
         label: "Apply via WhatsApp",
         href:
           "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
+      },
+      secondaryAction: {
+        label: "Explore Programmes",
+        href: "/programmes",
       },
     },
   },
@@ -688,15 +697,78 @@ export const siteContent = {
       eyebrow: "Next step",
       title: "Continue into coaching support or start your Contact / Apply step.",
       description:
-        "After understanding the learning approach, visitors can explore the UK coaching angle or move directly to contact and application actions.",
+        "After understanding the learning approach, visitors can review the programme structure or begin the conversation directly on WhatsApp.",
       primaryAction: {
-        label: "UK Coaching Sessions",
-        href: "/uk-coaching-sessions",
+        label: "Apply via WhatsApp",
+        href:
+          "https://wa.me/22791644059?text=Hello%20D.A%20Language%20Academy%2C%20I%20would%20like%20to%20apply%20for%20the%20programme.",
       },
       secondaryAction: {
-        label: "Contact / Apply",
-        href: "/contact",
+        label: "Explore Programmes",
+        href: "/programmes",
       },
+    },
+  },
+  placeholderContent: {
+    homeMedia: {
+      eyebrow: "Future academy media",
+      title: "Space prepared for academy photos and classroom visuals.",
+      description:
+        "Add a curated image strip here later to show the academy environment, training moments, and professional learning atmosphere without changing the layout structure.",
+      placeholderLabel: "Academy image strip placeholder",
+      altTextHint:
+        'Suggested alt text later: "Adult English learners in a classroom discussion at D.A Language Academy in Niamey."',
+      note: "Use this area later for 2-3 carefully selected academy or classroom photos.",
+    },
+    homeTestimonials: [
+      {
+        context: "Future learner success story",
+        role: "Student or professional testimonial",
+        placeholderNote:
+          "Add a concise quote here later from a learner describing confidence growth, practical communication progress, or programme impact.",
+      },
+      {
+        context: "Future organisation-facing proof point",
+        role: "Professional or institutional testimonial",
+        placeholderNote:
+          "Add a short professional testimonial here later from an adult learner or organisation-linked participant.",
+      },
+    ],
+    programmesMedia: {
+      eyebrow: "Future programme photography",
+      title: "Prepared space for classroom and training photos.",
+      description:
+        "When real visuals are ready, this section can introduce the learning environment and make the programme feel more tangible.",
+      placeholderLabel: "Programme training photo placeholder",
+      altTextHint:
+        'Suggested alt text later: "Adults in an English training session during the 3-month programme in Niamey."',
+      note: "Best later use: one classroom photo plus one small supporting image or still from a training session.",
+    },
+    aboutMedia: {
+      eyebrow: "Future story image",
+      title: "Prepared space for a director, team, or academy story image.",
+      description:
+        "This section is ready for a future founder/director portrait, team photo, or academy story visual without needing a redesign.",
+      placeholderLabel: "About page story photo placeholder",
+      altTextHint:
+        'Suggested alt text later: "Director or team portrait representing D.A Language Academy in Niamey."',
+      note: "Best later use: one strong editorial image that supports the academy story and mission.",
+    },
+    organisationsTestimonial: {
+      context: "Future professional reference",
+      role: "Institutional or NGO-linked testimonial",
+      placeholderNote:
+        "Add a carefully worded professional quote here later from a learner or team member connected to an organisation or institution.",
+    },
+    contactMedia: {
+      eyebrow: "Future location media",
+      title: "Prepared space for a location or academy entrance image.",
+      description:
+        "A future photo here can help visitors recognize the academy location and make the contact page feel more grounded.",
+      placeholderLabel: "Contact page location photo placeholder",
+      altTextHint:
+        'Suggested alt text later: "Exterior view of D.A Language Academy near Bobiel Première Pompe, Niamey."',
+      note: "Best later use: academy entrance, reception area, or recognizable location-based image.",
     },
   },
 } as const;

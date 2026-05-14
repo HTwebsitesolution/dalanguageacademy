@@ -6,13 +6,16 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Organisations",
   description:
-    "Explore D.A Language Academy's professional positioning for NGOs, institutions, organisations, and working professionals.",
-};
+    "Professional English training in Niamey for NGOs, institutions, organisations, and teams seeking stronger communication support.",
+  path: "/organisations",
+});
 
 export default function OrganisationsPage() {
   const { organisationsPage } = siteContent;
@@ -84,15 +87,33 @@ export default function OrganisationsPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--color-brand-700)]">
                     Focus area {index + 1}
                   </p>
-                  <h2 className="mt-4 text-2xl font-semibold text-[color:var(--color-slate-900)]">
+                  <h3 className="mt-4 text-2xl font-semibold text-[color:var(--color-slate-900)]">
                     {item.title}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-base leading-7 text-[color:var(--color-slate-600)]">
                     {item.description}
                   </p>
                 </Card>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <Reveal>
+            <SectionHeader
+              eyebrow="Future proof section"
+              title="Prepared space for a future professional reference."
+              description="A carefully selected quote from an organisation-linked learner or institutional contact can be added later here without changing the page structure."
+            />
+          </Reveal>
+
+          <div className="mt-10">
+            <Reveal>
+              <TestimonialCard {...siteContent.placeholderContent.organisationsTestimonial} />
+            </Reveal>
           </div>
         </Container>
       </section>

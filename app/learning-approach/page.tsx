@@ -7,12 +7,14 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Learning Approach",
   description:
-    "See how D.A Language Academy teaches English through listening, speaking, reading, writing, grammar, and practical learning methods.",
-};
+    "See how D.A Language Academy teaches listening, speaking, reading, writing, and grammar through practical methods and guided communication practice.",
+  path: "/learning-approach",
+});
 
 export default function LearningApproachPage() {
   const { learningApproachPage } = siteContent;
@@ -48,9 +50,9 @@ export default function LearningApproachPage() {
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[color:var(--color-brand-700)] text-lg font-semibold text-white">
                     {skill.title.charAt(0)}
                   </div>
-                  <h2 className="mt-5 text-xl font-semibold text-[color:var(--color-slate-900)]">
+                  <h3 className="mt-5 text-xl font-semibold text-[color:var(--color-slate-900)]">
                     {skill.title}
-                  </h2>
+                  </h3>
                   <p className="mt-3 text-sm leading-7 text-[color:var(--color-slate-600)]">
                     {skill.description}
                   </p>

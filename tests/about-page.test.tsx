@@ -25,7 +25,7 @@ describe("AboutPage", () => {
         expect(link).toHaveAttribute("href");
       });
     screen
-      .getAllByRole("link", { name: /view programmes/i })
+      .getAllByRole("link", { name: /explore programmes/i })
       .forEach((link) => {
         expect(link).toHaveAttribute("href", "/programmes");
       });

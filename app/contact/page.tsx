@@ -4,17 +4,20 @@ import Link from "next/link";
 
 import { ContactApplyForm } from "@/components/forms/contact-apply-form";
 import { Reveal } from "@/components/motion/reveal";
+import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { siteContent } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contact / Apply",
   description:
-    "Contact D.A Language Academy by WhatsApp, phone, email, or the frontend-only application form.",
-};
+    "Contact D.A Language Academy by WhatsApp, phone, email, or the frontend-only application form for English training in Niamey.",
+  path: "/contact",
+});
 
 const methodIcons = [MessageCircleMore, Phone, Mail, MapPin];
 
@@ -54,9 +57,9 @@ export default function ContactPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--color-brand-50)] text-[color:var(--color-brand-700)]">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h2 className="mt-6 text-xl font-semibold text-[color:var(--color-slate-900)]">
+                    <h3 className="mt-6 text-xl font-semibold text-[color:var(--color-slate-900)]">
                       {method.title}
-                    </h2>
+                    </h3>
 
                     {method.title === "Phone" ? (
                       <div className="mt-3 space-y-2">
@@ -101,7 +104,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="pb-20 pt-6 sm:pb-24">
+      <section className="py-16 sm:py-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
             <Reveal>
@@ -167,6 +170,8 @@ export default function ContactPage() {
           </div>
         </Container>
       </section>
+
+      <MediaFeature {...contactPage.mediaFeature} />
     </>
   );
 }

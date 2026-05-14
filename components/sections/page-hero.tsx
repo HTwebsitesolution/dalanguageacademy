@@ -61,13 +61,13 @@ export function PageHero({
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href={primaryAction.href}
-                className="inline-flex items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-800)]"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-800)] sm:w-auto"
               >
                 {primaryAction.label}
               </Link>
               <Link
                 href={secondaryAction.href}
-                className="inline-flex items-center justify-center rounded-full border border-[color:var(--color-border-strong)] bg-white px-6 py-3 text-sm font-semibold text-[color:var(--color-slate-900)] transition hover:border-[color:var(--color-brand-300)] hover:text-[color:var(--color-brand-700)]"
+                className="inline-flex w-full items-center justify-center rounded-full border border-[color:var(--color-border-strong)] bg-white px-6 py-3 text-sm font-semibold text-[color:var(--color-slate-900)] transition hover:border-[color:var(--color-brand-300)] hover:text-[color:var(--color-brand-700)] sm:w-auto"
               >
                 {secondaryAction.label}
               </Link>
