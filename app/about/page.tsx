@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
-import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -74,7 +74,32 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <MediaFeature {...siteContent.placeholderContent.aboutMedia} />
+      <section className="py-16 sm:py-20">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+            <Reveal>
+              <Card tone="accent" className="h-full">
+                <SectionHeader
+                  eyebrow="Official academy crest"
+                  title="A trusted English academy with a clear academic identity."
+                  description="The D.A Language Academy crest reflects structured teaching, professional standards, and a serious commitment to practical English communication in Niamey."
+                />
+                <p className="mt-6 text-sm leading-7 text-[color:var(--color-slate-600)]">
+                  Established in 2022, the academy supports university students, professionals,
+                  adult learners, and organisations through CEFR-based programmes and weekly UK
+                  coaching discussions.
+                </p>
+              </Card>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <div className="flex justify-center lg:justify-end">
+                <BrandLogo variant="full" priority />
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
 
       <section className="py-16 sm:py-20">
         <Container>

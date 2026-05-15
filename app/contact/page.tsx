@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
 import Link from "next/link";
 
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { ContactApplyForm } from "@/components/forms/contact-apply-form";
 import { Reveal } from "@/components/motion/reveal";
-import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -129,9 +129,15 @@ export default function ContactPage() {
 
             <Reveal delay={0.08}>
               <Card tone="muted" className="h-full">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-300)]">
-                  Direct contact
-                </p>
+                <div className="mb-6 flex items-center gap-4">
+                  <BrandLogo
+                    variant="compact"
+                    wrapperClassName="rounded-xl border border-white/10 bg-white/5 p-2"
+                  />
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-300)]">
+                    Direct contact
+                  </p>
+                </div>
                 <h2 className="mt-5 font-display text-4xl leading-tight text-white">
                   Reach the academy directly while online form connection is still pending.
                 </h2>
@@ -171,7 +177,6 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <MediaFeature {...contactPage.mediaFeature} />
     </>
   );
 }

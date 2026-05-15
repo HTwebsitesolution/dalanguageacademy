@@ -6,6 +6,9 @@ describe("Navbar", () => {
   it("uses real route links for the new Phase 2 pages", () => {
     render(<Navbar />);
 
+    expect(screen.getAllByText("DA").length).toBeGreaterThan(0);
+    expect(screen.queryByAltText(/official crest logo/i)).not.toBeInTheDocument();
+
     screen.getAllByRole("link", { name: "Programmes" }).forEach((link) => {
       expect(link).toHaveAttribute("href", "/programmes");
     });

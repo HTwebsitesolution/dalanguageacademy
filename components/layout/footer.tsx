@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { siteContent } from "@/content/site";
 
 import { Container } from "../ui/container";
@@ -9,6 +10,7 @@ export function Footer() {
     <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-slate-950)] py-14 text-white">
       <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.8fr_0.9fr]">
         <div className="space-y-4">
+          <BrandLogo variant="footer" />
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--color-gold-300)]">
             {siteContent.brand.name}
           </p>
