@@ -37,6 +37,13 @@ const variantConfig = {
     display: brandLogoDisplay.footer,
     sizes: "168px",
   },
+  contact: {
+    src: brandAssets.footer,
+    alt: brandAssets.altFull,
+    intrinsic: brandLogoDimensions.footer,
+    display: brandLogoDisplay.contact,
+    sizes: "52px",
+  },
 } as const;
 
 export function BrandLogo({

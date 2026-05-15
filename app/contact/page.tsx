@@ -130,10 +130,7 @@ export default function ContactPage() {
             <Reveal delay={0.08}>
               <Card tone="muted" className="h-full">
                 <div className="mb-6 flex items-center gap-4">
-                  <BrandLogo
-                    variant="compact"
-                    wrapperClassName="rounded-xl border border-white/10 bg-white/5 p-2"
-                  />
+                  <BrandLogo variant="contact" />
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-300)]">
                     Direct contact
                   </p>

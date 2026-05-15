@@ -10,7 +10,7 @@ export const brandAssets = {
   altMark: "D.A Language Academy crest mark",
 } as const;
 
-export type BrandLogoVariant = "compact" | "full" | "footer";
+export type BrandLogoVariant = "compact" | "full" | "footer" | "contact";
 
 /** Intrinsic dimensions of exported PNGs (for Next.js Image and layout stability). */
 export const brandLogoDimensions = {
@@ -24,4 +24,6 @@ export const brandLogoDisplay = {
   compact: { width: 72, height: 112 },
   full: { width: 260, height: 299 },
   footer: { width: 168, height: 193 },
+  /** White crest for dark panels (e.g. contact direct-contact card). */
+  contact: { width: 52, height: 60 },
 } as const;

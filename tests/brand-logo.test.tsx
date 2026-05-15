@@ -22,5 +22,11 @@ describe("BrandLogo", () => {
       "src",
       brandAssets.footer,
     );
+
+    rerender(<BrandLogo variant="contact" />);
+    expect(screen.getByAltText(brandAssets.altFull)).toHaveAttribute(
+      "src",
+      brandAssets.footer,
+    );
   });
 });
