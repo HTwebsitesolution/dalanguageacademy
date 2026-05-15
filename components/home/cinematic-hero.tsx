@@ -7,9 +7,8 @@ import { Container } from "@/components/ui/container";
 import { siteContent } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-/** Placeholder — replace with academy footage when available. */
-const HERO_VIDEO_SRC =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4";
+/** Academy hero background — served from /public */
+const HERO_VIDEO_SRC = "/videos/hero-section.mp4";
 
 const FADE_SECONDS = 0.5;
 const LOOP_GAP_MS = 100;
