@@ -25,6 +25,11 @@ describe("ContactPage", () => {
       .forEach((link) => {
         expect(link).toHaveAttribute("href", "mailto:dalanguageacademy@gmail.com");
       });
+    screen
+      .getAllByRole("link", { name: /admin@dalanguageacademy\.com/i })
+      .forEach((link) => {
+        expect(link).toHaveAttribute("href", "mailto:admin@dalanguageacademy.com");
+      });
     expect(screen.getAllByText(/bobiel première pompe, niamey/i).length).toBeGreaterThan(0);
     expect(
       screen.getByRole("form", { name: /contact and apply form/i }),

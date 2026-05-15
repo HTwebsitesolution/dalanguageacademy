@@ -10,6 +10,7 @@ import Link from "next/link";
 
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
+import { DirectContactLinks } from "@/components/sections/direct-contact-links";
 import { MediaFeature } from "@/components/sections/media-feature";
 import { CinematicHero } from "@/components/home/cinematic-hero";
 import { Card } from "@/components/ui/card";
@@ -306,6 +307,27 @@ export default function HomePage() {
               </Card>
             </Reveal>
           </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <Reveal>
+            <Card tone="muted" className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-300)]">
+                Direct contact
+              </p>
+              <h2 className="mt-4 font-display text-3xl leading-tight text-white sm:text-4xl">
+                WhatsApp, phone, and email
+              </h2>
+              <p className="mt-3 text-base leading-7 text-white/75">
+                Reach D.A Language Academy directly for programme questions or to apply.
+              </p>
+              <div className="mt-8">
+                <DirectContactLinks />
+              </div>
+            </Card>
+          </Reveal>
         </Container>
       </section>
 

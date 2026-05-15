@@ -29,6 +29,10 @@ export const siteContent = {
       label: "dalanguageacademy@gmail.com",
       href: "mailto:dalanguageacademy@gmail.com",
     },
+    adminEmail: {
+      label: "admin@dalanguageacademy.com",
+      href: "mailto:admin@dalanguageacademy.com",
+    },
     locationLines: ["Bobiel Première Pompe", "Niamey, Niger"],
   },
   hero: {

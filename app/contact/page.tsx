@@ -5,6 +5,7 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { ContactApplyForm } from "@/components/forms/contact-apply-form";
 import { Reveal } from "@/components/motion/reveal";
+import { DirectContactLinks } from "@/components/sections/direct-contact-links";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -143,27 +144,7 @@ export default function ContactPage() {
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <Link
-                    href={contact.whatsappHref}
-                    className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/85"
-                  >
-                    {contactPage.hero.primaryAction.label}
-                  </Link>
-                  {contact.phoneNumbers.map((phone) => (
-                    <Link
-                      key={phone.href}
-                      href={phone.href}
-                      className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/85"
-                    >
-                      {phone.label}
-                    </Link>
-                  ))}
-                  <Link
-                    href={contact.email.href}
-                    className="block rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/85"
-                  >
-                    {contact.email.label}
-                  </Link>
+                  <DirectContactLinks />
                   <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm font-medium text-white/85">
                     {contactPage.methods[3]?.label}
                   </div>
