@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
 import { MediaFeature } from "@/components/sections/media-feature";
-import { PageHero } from "@/components/sections/page-hero";
+import { CinematicHero } from "@/components/home/cinematic-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -32,17 +32,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
-      <Reveal>
-        <PageHero
-          eyebrow={siteContent.hero.eyebrow}
-          title={siteContent.hero.title}
-          titleLines={siteContent.hero.titleLines}
-          description={siteContent.hero.description}
-          primaryAction={siteContent.hero.primaryCta}
-          secondaryAction={siteContent.hero.secondaryCta}
-          stats={siteContent.hero.stats}
-        />
-      </Reveal>
+      <CinematicHero />
 
       <section className="pb-10">
         <Container>

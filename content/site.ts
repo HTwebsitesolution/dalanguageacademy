@@ -32,7 +32,7 @@ export const siteContent = {
     locationLines: ["Bobiel Première Pompe", "Niamey, Niger"],
   },
   hero: {
-    eyebrow: "English training in Niamey",
+    eyebrow: "ENGLISH TRAINING IN NIAMEY",
     title: "Your 3-month pathway to more confident English communication.",
     titleLines: [
       "Your 3-month pathway",
@@ -40,7 +40,7 @@ export const siteContent = {
       "communication.",
     ],
     description:
-      "Build practical English skills for study, work, and international collaboration through focused sessions, real-world practice, and weekly discussion opportunities with UK-based coaches.",
+      "Build practical English skills for study, work, and international collaboration through CEFR-based training, real-world practice, and weekly online discussion sessions with UK-based coaches.",
     primaryCta: {
       label: "Apply via WhatsApp",
       href:
