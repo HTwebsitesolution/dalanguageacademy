@@ -54,9 +54,9 @@ export default function HomePage() {
         <Container>
           <Reveal>
             <SectionHeader
-              eyebrow="Learner and partner context"
-              title="Real training environments behind the academy promise."
-              description="Photos show the type of adult learners and organisation workshops D.A Language Academy supports. Approved quotes can be added when available."
+              eyebrow="Learner and partner stories"
+              title="Hear from graduates and NGO partners."
+              description="Short video testimonials from a programme graduate and a Save the Children partnership session in Niamey."
             />
           </Reveal>
 

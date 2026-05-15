@@ -109,15 +109,17 @@ export default function OrganisationsPage() {
           <Reveal>
             <SectionHeader
               eyebrow="Partner proof"
-              title="Organisation training with visible professional context."
-              description="Workshop photos show how D.A Language Academy delivers for NGOs and institutions. A named reference can be added when approved for publication."
+              title="NGO partnerships on video."
+              description="See how D.A Language Academy delivers English training for Save the Children and refugee programme partners in Niamey."
             />
           </Reveal>
 
-          <div className="mt-10 max-w-2xl">
-            <Reveal>
-              <TestimonialCard {...pageMedia.organisations.proof} />
-            </Reveal>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {pageMedia.organisations.testimonials.map((testimonial, index) => (
+              <Reveal key={testimonial.context} delay={index * 0.06}>
+                <TestimonialCard {...testimonial} />
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>

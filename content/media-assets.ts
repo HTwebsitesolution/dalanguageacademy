@@ -36,7 +36,26 @@ export const mediaAssets = {
   testimonials: {
     learnerPortrait: "/images/testimonials/testimonial-learner-01.jpg",
   },
+  videos: {
+    hanifaGraduate: "/videos/testimonials/hanifa-graduate.mp4",
+    ngoSaveTheChildren: "/videos/testimonials/ngo-save-the-children.mp4",
+    ngoRefugee: "/videos/testimonials/ngo-refugee.mp4",
+  },
 } as const;
+
+export type TestimonialVideo = {
+  src: string;
+  poster?: string;
+  label: string;
+};
+
+export type TestimonialContent = {
+  context: string;
+  role: string;
+  description?: string;
+  image?: MediaImage;
+  video?: TestimonialVideo;
+};
 
 export type MediaImage = {
   src: string;
@@ -80,26 +99,28 @@ export const pageMedia = {
     } satisfies MediaFeatureContent,
     testimonials: [
       {
-        context: "Learner environment",
-        role: "Professional and university learners",
-        image: {
-          src: mediaAssets.testimonials.learnerPortrait,
-          alt: "Adult learner participating in an English session at D.A Language Academy",
+        context: "Hanifa",
+        role: "Graduate of D.A Language Academy",
+        description:
+          "A learner shares her experience after completing the academy programme in Niamey.",
+        video: {
+          src: mediaAssets.videos.hanifaGraduate,
+          poster: mediaAssets.testimonials.learnerPortrait,
+          label: "Video testimonial from Hanifa, graduate of D.A Language Academy",
         },
-        placeholderNote:
-          "A learner quote can be added here when approved. The photo shows the type of serious adult learner the academy supports.",
       },
       {
-        context: "Organisation delivery",
-        role: "NGO and institutional workshops",
-        image: {
-          src: mediaAssets.organisations.training,
-          alt: "Organisation training workshop delivered with D.A Language Academy in Niamey",
+        context: "Save the Children partnership",
+        role: "NGO English training delivery",
+        description:
+          "D.A Language Academy delivering professional English workshops in partnership with Save the Children.",
+        video: {
+          src: mediaAssets.videos.ngoSaveTheChildren,
+          poster: mediaAssets.organisations.training,
+          label: "Video of D.A Language Academy partnership training with Save the Children",
         },
-        placeholderNote:
-          "A partner or institutional reference can be added here when available.",
       },
-    ],
+    ] satisfies readonly TestimonialContent[],
   },
   programmes: {
     training: {
@@ -137,16 +158,30 @@ export const pageMedia = {
       },
       reverse: true,
     } satisfies MediaFeatureContent,
-    proof: {
-      context: "Institutional training context",
-      role: "NGO and partner workshops",
-      image: {
-        src: mediaAssets.organisations.training,
-        alt: "IRC organisation workshop during English training with D.A Language Academy",
+    testimonials: [
+      {
+        context: "Save the Children partnership",
+        role: "NGO programme delivery in Niamey",
+        description:
+          "Structured English training delivered for Save the Children programme participants.",
+        video: {
+          src: mediaAssets.videos.ngoSaveTheChildren,
+          poster: mediaAssets.organisations.training,
+          label: "D.A Language Academy training partnership with Save the Children",
+        },
       },
-      placeholderNote:
-        "A named institutional testimonial can be added here when approved for publication.",
-    },
+      {
+        context: "Refugee programme partnership",
+        role: "NGO English support",
+        description:
+          "Workshop delivery supporting refugee programme participants with practical English communication.",
+        video: {
+          src: mediaAssets.videos.ngoRefugee,
+          poster: mediaAssets.organisations.workshop,
+          label: "D.A Language Academy partnership training for refugee programme participants",
+        },
+      },
+    ] satisfies readonly TestimonialContent[],
   },
   about: {
     leadership: {
