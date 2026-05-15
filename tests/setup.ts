@@ -12,14 +12,11 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("next/image", () => ({
-  default: (props: React.ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean }) => {
-    const { src, alt, priority: _priority, fill: _fill, ...rest } = props;
-    return createElement("img", {
+  default: ({ src, alt }: { src: string; alt?: string }) =>
+    createElement("img", {
       src: typeof src === "string" ? src : "",
       alt: alt ?? "",
-      ...rest,
-    });
-  },
+    }),
 }));
 
 class MockIntersectionObserver implements IntersectionObserver {
