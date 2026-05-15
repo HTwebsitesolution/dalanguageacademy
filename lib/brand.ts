@@ -1,9 +1,11 @@
+import { mediaAssets } from "@/content/media-assets";
+
 /** Official logo assets — served from /public/images/logo/ */
 export const brandAssets = {
-  full: "/images/logo/da-logo-full.png",
-  fullTransparent: "/images/logo/da-logo-transparent.png",
-  mark: "/images/logo/da-logo-mark.png",
-  footer: "/images/logo/da-logo-footer.png",
+  full: mediaAssets.logo.full,
+  fullTransparent: mediaAssets.logo.fullTransparent,
+  mark: mediaAssets.logo.mark,
+  footer: mediaAssets.logo.footer,
   altFull: "D.A Language Academy official crest logo",
   altMark: "D.A Language Academy crest mark",
 } as const;

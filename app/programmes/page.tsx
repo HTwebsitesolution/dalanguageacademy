@@ -7,6 +7,7 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { pageMedia } from "@/content/media-assets";
 import { siteContent } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -63,7 +64,7 @@ export default function ProgrammesPage() {
         </Container>
       </section>
 
-      <MediaFeature {...siteContent.placeholderContent.programmesMedia} />
+      <MediaFeature {...pageMedia.programmes.training} />
 
       <section className="py-16 sm:py-20">
         <Container>

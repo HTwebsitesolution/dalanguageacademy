@@ -3,10 +3,12 @@ import type { Metadata } from "next";
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
+import { MediaFeature } from "@/components/sections/media-feature";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { pageMedia } from "@/content/media-assets";
 import { siteContent } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -100,6 +102,8 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <MediaFeature {...pageMedia.about.leadership} />
 
       <section className="py-16 sm:py-20">
         <Container>

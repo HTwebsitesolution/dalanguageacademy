@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
@@ -6,6 +7,7 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { pageMedia } from "@/content/media-assets";
 import { siteContent } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -61,52 +63,45 @@ export default function UKCoachingSessionsPage() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <Card tone="muted" className="h-full overflow-hidden">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-300)]">
-                  Online session view
-                </p>
-                <h2 className="mt-4 font-display text-4xl leading-tight text-white">
-                  A modern video-call style experience designed for real speaking practice.
-                </h2>
-                <p className="mt-4 text-base leading-7 text-white/75">
-                  Learners move beyond classroom-only interaction into a guided online discussion setting that feels current, dynamic, and internationally connected.
-                </p>
+              <Card tone="muted" className="h-full overflow-hidden p-0">
+                <div className="p-6 sm:p-8">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-gold-300)]">
+                    UK-linked coaching
+                  </p>
+                  <h2 className="mt-4 font-display text-4xl leading-tight text-white">
+                    Real online discussion with international exposure.
+                  </h2>
+                  <p className="mt-4 text-base leading-7 text-white/75">
+                    Learners move beyond classroom-only interaction into guided online
+                    discussion that connects Niamey-based training with UK-linked coaching
+                    support.
+                  </p>
+                </div>
 
-                <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/5 p-5">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold text-white">
-                        Weekly online speaking session
-                      </p>
-                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/50">
-                        UK-based coaching discussion
-                      </p>
-                    </div>
-                    <div className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-200">
-                      Live session
-                    </div>
-                  </div>
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={pageMedia.ukCoaching.session.src}
+                    alt={pageMedia.ukCoaching.session.alt}
+                    width={1200}
+                    height={750}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
 
-                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                    {ukCoachingPage.onlineSession.sessionTags.map((tag, index) => (
-                      <div
+                <div className="space-y-4 p-6 sm:p-8">
+                  <div className="flex flex-wrap gap-2">
+                    {ukCoachingPage.onlineSession.sessionTags.map((tag) => (
+                      <span
                         key={tag}
-                        className={`rounded-2xl border px-4 py-5 ${
-                          index === 0
-                            ? "border-[color:var(--color-gold-300)] bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.06))]"
-                            : "border-white/10 bg-white/6"
-                        }`}
+                        className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-white/85"
                       >
-                        <div className="mb-4 flex items-center justify-between">
-                          <div className="h-10 w-10 rounded-full bg-white/10" />
-                          <div className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
-                        </div>
-                        <p className="text-sm font-medium text-white/85">{tag}</p>
-                      </div>
+                        {tag}
+                      </span>
                     ))}
                   </div>
 
-                  <div className="mt-5 space-y-3">
+                  <div className="space-y-3">
                     {ukCoachingPage.onlineSession.sessionPoints.map((point) => (
                       <div
                         key={point}
@@ -116,10 +111,6 @@ export default function UKCoachingSessionsPage() {
                       </div>
                     ))}
                   </div>
-
-                  <p className="mt-5 text-xs leading-6 text-white/50">
-                    Future media slot: this visual can later be paired with a real online session still or coaching screenshot.
-                  </p>
                 </div>
               </Card>
             </Reveal>

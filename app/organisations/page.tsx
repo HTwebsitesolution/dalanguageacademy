@@ -6,7 +6,9 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { MediaFeature } from "@/components/sections/media-feature";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { pageMedia } from "@/content/media-assets";
 import { siteContent } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -100,19 +102,21 @@ export default function OrganisationsPage() {
         </Container>
       </section>
 
+      <MediaFeature {...pageMedia.organisations.training} />
+
       <section className="py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeader
-              eyebrow="Future proof section"
-              title="Prepared space for a future professional reference."
-              description="A carefully selected quote from an organisation-linked learner or institutional contact can be added later here without changing the page structure."
+              eyebrow="Partner proof"
+              title="Organisation training with visible professional context."
+              description="Workshop photos show how D.A Language Academy delivers for NGOs and institutions. A named reference can be added when approved for publication."
             />
           </Reveal>
 
-          <div className="mt-10">
+          <div className="mt-10 max-w-2xl">
             <Reveal>
-              <TestimonialCard {...siteContent.placeholderContent.organisationsTestimonial} />
+              <TestimonialCard {...pageMedia.organisations.proof} />
             </Reveal>
           </div>
         </Container>

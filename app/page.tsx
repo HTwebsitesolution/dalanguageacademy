@@ -16,6 +16,7 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { pageMedia } from "@/content/media-assets";
 import { siteContent } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -57,20 +58,20 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <MediaFeature {...siteContent.placeholderContent.homeMedia} />
+      <MediaFeature {...pageMedia.home.academy} />
 
       <section className="py-16 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeader
-              eyebrow="Future learner stories"
-              title="Prepared space for testimonials and proof later."
-              description="This section is already positioned for future learner stories and professional proof without forcing placeholder testimonials into the current live copy."
+              eyebrow="Learner and partner context"
+              title="Real training environments behind the academy promise."
+              description="Photos show the type of adult learners and organisation workshops D.A Language Academy supports. Approved quotes can be added when available."
             />
           </Reveal>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            {siteContent.placeholderContent.homeTestimonials.map((testimonial, index) => (
+            {pageMedia.home.testimonials.map((testimonial, index) => (
               <Reveal key={testimonial.context} delay={index * 0.05}>
                 <TestimonialCard {...testimonial} />
               </Reveal>
