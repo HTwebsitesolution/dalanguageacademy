@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+
+import { renderLocalePage } from "@/tests/render-locale-page";
 
 describe("UKCoachingSessionsPage", () => {
   it("renders the coaching message, process steps, and CTA links", async () => {
-    const pageModule = await import("@/app/uk-coaching-sessions/page");
-    const UKCoachingSessionsPage = pageModule.default;
-
-    render(<UKCoachingSessionsPage />);
+    await renderLocalePage(() => import("@/app/[locale]/uk-coaching-sessions/page"));
 
     expect(
       screen.getByRole("heading", {
@@ -26,7 +25,7 @@ describe("UKCoachingSessionsPage", () => {
     screen
       .getAllByRole("link", { name: /explore programmes/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/programmes");
+        expect(link).toHaveAttribute("href", "/en/programmes");
       });
   });
 });

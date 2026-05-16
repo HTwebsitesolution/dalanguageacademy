@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 
-import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
-import { Navbar } from "@/components/layout/navbar";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { siteMetadata } from "@/lib/metadata";
 
@@ -51,22 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" id="top" className={`${bodyFont.variable} ${displayFont.variable}`}>
       <body className="antialiased">
-        <MotionProvider>
-          <a
-            href="#main-content"
-            className="sr-only absolute left-4 top-4 z-[60] rounded-full bg-[color:var(--color-brand-700)] px-4 py-2 text-sm font-semibold text-white focus:not-sr-only"
-          >
-            Skip to content
-          </a>
-          <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <main id="main-content" className="flex-1">
-              {children}
-            </main>
-            <Footer />
-            <FloatingWhatsApp />
-          </div>
-        </MotionProvider>
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

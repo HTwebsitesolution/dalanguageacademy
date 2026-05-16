@@ -8,7 +8,10 @@ vi.mock("next/font/google", () => ({
 }));
 
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/",
+  usePathname: () => "/en",
+  useRouter: () => ({
+    push: vi.fn(),
+  }),
 }));
 
 vi.mock("next/image", () => ({

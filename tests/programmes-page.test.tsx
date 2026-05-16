@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+
+import { renderLocalePage } from "@/tests/render-locale-page";
 
 describe("ProgrammesPage", () => {
   it("renders the core programme facts and CTA", async () => {
-    const pageModule = await import("@/app/programmes/page");
-    const ProgrammesPage = pageModule.default;
-
-    render(<ProgrammesPage />);
+    await renderLocalePage(() => import("@/app/[locale]/programmes/page"));
 
     expect(
       screen.getByRole("heading", { name: /^cefr a1 to c2 pathway$/i }),
@@ -17,7 +16,7 @@ describe("ProgrammesPage", () => {
     screen
       .getAllByRole("link", { name: /contact \/ apply/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/contact");
+        expect(link).toHaveAttribute("href", "/en/contact");
       });
   });
 });

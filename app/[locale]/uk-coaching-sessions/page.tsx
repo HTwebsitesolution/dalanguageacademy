@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Reveal } from "@/components/motion/reveal";
@@ -7,18 +6,21 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { pageMedia } from "@/content/media-assets";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { getPageMedia } from "@/content/media-assets";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "UK Coaching Sessions",
-  description:
-    "Weekly online speaking sessions with UK-based coaches that help learners build speaking confidence, pronunciation, and international communication exposure.",
-  path: "/uk-coaching-sessions",
-});
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function UKCoachingSessionsPage() {
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "ukCoaching");
+}
+
+export default async function UKCoachingSessionsPage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
+  const pageMedia = getPageMedia(locale);
   const { ukCoachingPage } = siteContent;
 
   return (
@@ -31,6 +33,7 @@ export default function UKCoachingSessionsPage() {
           primaryAction={ukCoachingPage.hero.primaryAction}
           secondaryAction={ukCoachingPage.hero.secondaryAction}
           stats={ukCoachingPage.hero.stats}
+          statsCardTitle={siteContent.pageHero.statsTitle}
         />
       </Reveal>
 

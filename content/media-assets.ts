@@ -1,3 +1,6 @@
+import type { Locale } from "@/lib/i18n/config";
+import { pageMediaFr } from "@/content/page-media.fr";
+
 /**
  * Strategic image paths for D.A Language Academy.
  * Rule: images should strengthen trust, not decorate the site.
@@ -197,3 +200,9 @@ export const pageMedia = {
     } satisfies MediaFeatureContent,
   },
 } as const;
+
+export type PageMedia = typeof pageMedia;
+
+export function getPageMedia(locale: Locale): PageMedia {
+  return (locale === "fr" ? pageMediaFr : pageMedia) as PageMedia;
+}

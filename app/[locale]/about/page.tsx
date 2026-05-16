@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { BrandLogo } from "@/components/brand/brand-logo";
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
@@ -8,18 +6,21 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { pageMedia } from "@/content/media-assets";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { getPageMedia } from "@/content/media-assets";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "About",
-  description:
-    "Learn about D.A Language Academy, its mission, values, CEFR-based structure, and practical English training approach in Niamey.",
-  path: "/about",
-});
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function AboutPage() {
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "about");
+}
+
+export default async function AboutPage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
+  const pageMedia = getPageMedia(locale);
   const { aboutPage } = siteContent;
 
   return (
@@ -32,6 +33,7 @@ export default function AboutPage() {
           primaryAction={aboutPage.hero.primaryAction}
           secondaryAction={aboutPage.hero.secondaryAction}
           stats={aboutPage.hero.stats}
+          statsCardTitle={siteContent.pageHero.statsTitle}
         />
       </Reveal>
 

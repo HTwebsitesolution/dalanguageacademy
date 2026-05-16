@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -10,19 +9,21 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Contact / Apply",
-  description:
-    "Contact D.A Language Academy by WhatsApp, phone, email, or the frontend-only application form for English training in Niamey.",
-  path: "/contact",
-});
+type PageProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "contact");
+}
 
 const methodIcons = [MessageCircleMore, Phone, Mail, MapPin];
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
   const { contactPage, contact } = siteContent;
 
   return (
@@ -35,6 +36,7 @@ export default function ContactPage() {
           primaryAction={contactPage.hero.primaryAction}
           secondaryAction={contactPage.hero.secondaryAction}
           stats={contactPage.hero.stats}
+          statsCardTitle={siteContent.pageHero.statsTitle}
         />
       </Reveal>
 

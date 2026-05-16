@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
 import { MediaFeature } from "@/components/sections/media-feature";
@@ -7,18 +5,21 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { pageMedia } from "@/content/media-assets";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { getPageMedia } from "@/content/media-assets";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Programmes",
-  description:
-    "Explore practical CEFR-based English programmes in Niamey with a 3-month structure, tests, certificates, and support for students and professionals.",
-  path: "/programmes",
-});
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function ProgrammesPage() {
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "programmes");
+}
+
+export default async function ProgrammesPage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
+  const pageMedia = getPageMedia(locale);
   const { programmesPage } = siteContent;
 
   return (
@@ -31,6 +32,7 @@ export default function ProgrammesPage() {
           primaryAction={programmesPage.hero.primaryAction}
           secondaryAction={programmesPage.hero.secondaryAction}
           stats={programmesPage.hero.stats}
+          statsCardTitle={siteContent.pageHero.statsTitle}
         />
       </Reveal>
 

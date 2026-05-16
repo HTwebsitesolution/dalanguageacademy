@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+
+import { renderLocalePage } from "@/tests/render-locale-page";
 
 describe("AboutPage", () => {
   it("renders the academy story, mission, values, and CTA links", async () => {
-    const pageModule = await import("@/app/about/page");
-    const AboutPage = pageModule.default;
-
-    render(<AboutPage />);
+    await renderLocalePage(() => import("@/app/[locale]/about/page"));
 
     expect(
       screen.getByRole("heading", { name: /about d\.a language academy/i }),
@@ -30,7 +29,7 @@ describe("AboutPage", () => {
     screen
       .getAllByRole("link", { name: /explore programmes/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/programmes");
+        expect(link).toHaveAttribute("href", "/en/programmes");
       });
   });
 });

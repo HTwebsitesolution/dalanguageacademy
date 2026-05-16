@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
 import { PageHero } from "@/components/sections/page-hero";
@@ -8,18 +6,21 @@ import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { MediaFeature } from "@/components/sections/media-feature";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
-import { pageMedia } from "@/content/media-assets";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { getPageMedia } from "@/content/media-assets";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Organisations",
-  description:
-    "Professional English training in Niamey for NGOs, institutions, organisations, and teams seeking stronger communication support.",
-  path: "/organisations",
-});
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function OrganisationsPage() {
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "organisations");
+}
+
+export default async function OrganisationsPage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
+  const pageMedia = getPageMedia(locale);
   const { organisationsPage } = siteContent;
 
   return (
@@ -32,6 +33,7 @@ export default function OrganisationsPage() {
           primaryAction={organisationsPage.hero.primaryAction}
           secondaryAction={organisationsPage.hero.secondaryAction}
           stats={organisationsPage.hero.stats}
+          statsCardTitle={siteContent.pageHero.statsTitle}
         />
       </Reveal>
 

@@ -1,11 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+
+import { renderLocalePage } from "@/tests/render-locale-page";
 
 describe("OrganisationsPage", () => {
   it("renders organisation-focused content, institution names, and CTA links", async () => {
-    const pageModule = await import("@/app/organisations/page");
-    const OrganisationsPage = pageModule.default;
-
-    render(<OrganisationsPage />);
+    await renderLocalePage(() => import("@/app/[locale]/organisations/page"));
 
     expect(
       screen.getByText(
@@ -22,12 +21,12 @@ describe("OrganisationsPage", () => {
     screen
       .getAllByRole("link", { name: /discuss organisation training/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/contact");
+        expect(link).toHaveAttribute("href", "/en/contact");
       });
     screen
       .getAllByRole("link", { name: /contact \/ apply/i })
       .forEach((link) => {
-        expect(link).toHaveAttribute("href", "/contact");
+        expect(link).toHaveAttribute("href", "/en/contact");
       });
   });
 });

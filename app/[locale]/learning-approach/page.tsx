@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Learning Approach",
-  description:
-    "See how D.A Language Academy teaches listening, speaking, reading, writing, and grammar through practical methods and guided communication practice.",
-  path: "/learning-approach",
-});
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function LearningApproachPage() {
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "learningApproach");
+}
+
+export default async function LearningApproachPage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
   const { learningApproachPage } = siteContent;
 
   return (
@@ -29,6 +29,7 @@ export default function LearningApproachPage() {
           primaryAction={learningApproachPage.hero.primaryAction}
           secondaryAction={learningApproachPage.hero.secondaryAction}
           stats={learningApproachPage.hero.stats}
+          statsCardTitle={siteContent.pageHero.statsTitle}
         />
       </Reveal>
 

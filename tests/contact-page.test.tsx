@@ -1,11 +1,10 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
+
+import { renderLocalePage } from "@/tests/render-locale-page";
 
 describe("ContactPage", () => {
   it("renders contact methods and shows the frontend-only submit message", async () => {
-    const pageModule = await import("@/app/contact/page");
-    const ContactPage = pageModule.default;
-
-    render(<ContactPage />);
+    await renderLocalePage(() => import("@/app/[locale]/contact/page"));
 
     expect(
       screen.getByRole("heading", { name: /contact \/ apply/i }),

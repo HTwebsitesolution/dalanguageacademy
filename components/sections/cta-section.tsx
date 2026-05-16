@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { LocaleLink } from "@/components/layout/locale-link";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 
@@ -39,18 +38,18 @@ export function CTASection({
           />
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link
+            <LocaleLink
               href={primaryAction.href}
               className="inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-800)] transition hover:bg-[color:var(--color-gold-100)] sm:w-auto"
             >
               {primaryAction.label}
-            </Link>
-            <Link
+            </LocaleLink>
+            <LocaleLink
               href={secondaryAction.href}
               className="inline-flex w-full items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/8 sm:w-auto"
             >
               {secondaryAction.label}
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </Container>

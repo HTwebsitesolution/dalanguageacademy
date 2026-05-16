@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -6,7 +5,7 @@ import {
   GraduationCap,
   Users,
 } from "lucide-react";
-import Link from "next/link";
+import { LocaleLink } from "@/components/layout/locale-link";
 
 import { Reveal } from "@/components/motion/reveal";
 import { CTASection } from "@/components/sections/cta-section";
@@ -17,20 +16,24 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
-import { pageMedia } from "@/content/media-assets";
-import { siteContent } from "@/content/site";
-import { createPageMetadata } from "@/lib/metadata";
+import { getSiteContent } from "@/content";
+import { getPageMedia } from "@/content/media-assets";
+import { generateLocaleMetadata } from "@/lib/i18n/page-metadata";
+import { resolveLocale } from "@/lib/i18n/resolve-locale";
 
 const audienceIcons = [GraduationCap, BriefcaseBusiness, Users, Building2];
 
-export const metadata: Metadata = createPageMetadata({
-  title: "Home",
-  description:
-    "Practical English language training in Niamey for students, professionals and organisations. CEFR-based 3-month programmes with weekly online discussion sessions with UK-based coaches.",
-  path: "/",
-});
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function HomePage() {
+export async function generateMetadata({ params }: PageProps) {
+  return generateLocaleMetadata(params, "home");
+}
+
+export default async function HomePage({ params }: PageProps) {
+  const locale = resolveLocale((await params).locale);
+  const siteContent = getSiteContent(locale);
+  const pageMedia = getPageMedia(locale);
+
   return (
     <>
       <CinematicHero />
@@ -236,13 +239,13 @@ export default function HomePage() {
                   <p className="mt-4 text-base leading-8 text-[color:var(--color-slate-600)]">
                     Adults improve faster when English is taught in context. D.A Language Academy connects grammar, vocabulary, and speaking practice to the situations learners actually face in study, work, and professional life.
                   </p>
-                  <Link
+                  <LocaleLink
                     href="/contact"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-brand-700)]"
                   >
                     Contact / Apply
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </LocaleLink>
                 </Card>
               </div>
             </Reveal>

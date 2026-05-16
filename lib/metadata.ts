@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 
+import type { Locale } from "@/lib/i18n/config";
+import { locales } from "@/lib/i18n/config";
+import { withLocale } from "@/lib/i18n/routing";
+
 export const siteMetadata = {
   name: "D.A Language Academy",
   siteTitle: "D.A Language Academy | English Training in Niamey",
@@ -12,29 +16,40 @@ type PageMetadataInput = {
   title: string;
   description: string;
   path: string;
+  locale?: Locale;
 };
 
 export function createPageMetadata({
   title,
   description,
   path,
+  locale = "en",
 }: PageMetadataInput): Metadata {
-  const fullTitle =
-    title === "Home" ? siteMetadata.siteTitle : `${title} | ${siteMetadata.name}`;
+  const localizedPath = withLocale(path, locale);
+  const canonical = `${siteMetadata.siteUrl}${localizedPath}`;
+  const homeTitles = new Set(["Home", "Accueil"]);
+  const fullTitle = homeTitles.has(title)
+    ? siteMetadata.siteTitle
+    : `${title} | ${siteMetadata.name}`;
+
+  const languages = Object.fromEntries(
+    locales.map((code) => [code, `${siteMetadata.siteUrl}${withLocale(path, code)}`]),
+  );
 
   return {
     title,
     description,
     alternates: {
-      canonical: path,
+      canonical: localizedPath,
+      languages,
     },
     openGraph: {
       title: fullTitle,
       description,
-      url: path,
+      url: canonical,
       siteName: siteMetadata.name,
       type: "website",
-      locale: "en_US",
+      locale: locale === "fr" ? "fr_FR" : "en_US",
     },
     twitter: {
       card: "summary_large_image",

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { locales } from "@/lib/i18n/config";
+import { withLocale } from "@/lib/i18n/routing";
 import { siteMetadata } from "@/lib/metadata";
 
 const routes = [
@@ -13,10 +15,12 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
-    url: `${siteMetadata.siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
-  }));
+  return locales.flatMap((locale) =>
+    routes.map((route) => ({
+      url: `${siteMetadata.siteUrl}${withLocale(route, locale)}`,
+      lastModified: new Date(),
+      changeFrequency: route === "" ? "weekly" : "monthly",
+      priority: route === "" ? 1 : 0.8,
+    })),
+  );
 }

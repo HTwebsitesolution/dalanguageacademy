@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+import { LocaleLink } from "@/components/layout/locale-link";
 import { Container } from "@/components/ui/container";
-import { siteContent } from "@/content/site";
+import { useSiteContent } from "@/hooks/use-site-content";
 import { cn } from "@/lib/utils";
 
 /** Academy hero background — served from /public */
@@ -13,17 +13,20 @@ const HERO_VIDEO_SRC = "/videos/hero-section.mp4";
 const FADE_SECONDS = 0.5;
 const LOOP_GAP_MS = 100;
 
-const TRUST_LINE =
-  "Established in 2022 · CEFR A1–C2 · 50,000 CFA · Tests & Certificates Included";
+type HeroContent = ReturnType<typeof useSiteContent>["hero"];
 
-type HeroContent = typeof siteContent.hero;
-
-function HeroProgrammeCard({ stats }: { stats: HeroContent["stats"] }) {
+function HeroProgrammeCard({
+  stats,
+  title,
+}: {
+  stats: HeroContent["stats"];
+  title: string;
+}) {
   return (
     <div className="hero-fade-rise hero-fade-rise-delay-4 rounded-[1.75rem] border border-white/15 bg-white/10 p-2 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-3">
       <div className="rounded-[1.35rem] bg-[color:var(--color-slate-900)]/90 p-6 sm:p-8">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-gold-300)]">
-          Programme at a glance
+          {title}
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {stats.map((stat) => (
@@ -136,7 +139,7 @@ function CinematicHeroVideo({
 }
 
 export function CinematicHero() {
-  const { hero } = siteContent;
+  const { hero } = useSiteContent();
   const [motionEnabled, setMotionEnabled] = useState(true);
 
   useEffect(() => {
@@ -190,28 +193,28 @@ export function CinematicHero() {
             </div>
 
             <div className="hero-fade-rise hero-fade-rise-delay-2 flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Link
+              <LocaleLink
                 href={hero.primaryCta.href}
                 className="inline-flex w-full items-center justify-center rounded-full bg-[color:var(--color-gold-300)] px-6 py-3.5 text-sm font-semibold text-[color:var(--color-brand-800)] transition hover:bg-[color:var(--color-gold-100)] sm:w-auto"
               >
                 {hero.primaryCta.label}
-              </Link>
-              <Link
+              </LocaleLink>
+              <LocaleLink
                 href={hero.secondaryCta.href}
                 className={cn(
                   "inline-flex w-full items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/40 hover:bg-white/15 sm:w-auto",
                 )}
               >
                 {hero.secondaryCta.label}
-              </Link>
+              </LocaleLink>
             </div>
 
             <p className="hero-fade-rise hero-fade-rise-delay-3 max-w-xl text-sm leading-7 text-white/65">
-              {TRUST_LINE}
+              {hero.trustLine}
             </p>
           </div>
 
-          <HeroProgrammeCard stats={hero.stats} />
+          <HeroProgrammeCard stats={hero.stats} title={hero.statsCardTitle} />
         </div>
       </Container>
     </section>

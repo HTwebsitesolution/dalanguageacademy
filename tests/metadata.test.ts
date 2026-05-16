@@ -1,11 +1,5 @@
-import { metadata as aboutMetadata } from "@/app/about/page";
-import { metadata as contactMetadata } from "@/app/contact/page";
-import { metadata as homeMetadata } from "@/app/page";
-import { metadata as learningApproachMetadata } from "@/app/learning-approach/page";
 import { metadata as rootMetadata } from "@/app/layout";
-import { metadata as organisationsMetadata } from "@/app/organisations/page";
-import { metadata as programmesMetadata } from "@/app/programmes/page";
-import { metadata as ukCoachingMetadata } from "@/app/uk-coaching-sessions/page";
+import { buildPageMetadata } from "@/lib/i18n/page-metadata";
 
 describe("metadata", () => {
   it("uses the deployment-ready site title and core description in the root layout", () => {
@@ -19,20 +13,29 @@ describe("metadata", () => {
   });
 
   it("adds Open Graph metadata for each page", () => {
-    const pageMetadata = [
-      homeMetadata,
-      programmesMetadata,
-      learningApproachMetadata,
-      ukCoachingMetadata,
-      organisationsMetadata,
-      aboutMetadata,
-      contactMetadata,
-    ];
+    const pageKeys = [
+      "home",
+      "programmes",
+      "learningApproach",
+      "ukCoaching",
+      "organisations",
+      "about",
+      "contact",
+    ] as const;
 
-    pageMetadata.forEach((metadata) => {
+    pageKeys.forEach((page) => {
+      const metadata = buildPageMetadata("en", page);
       expect(metadata.openGraph).toBeDefined();
       expect(metadata.openGraph?.title).toBeTruthy();
       expect(metadata.openGraph?.description).toBeTruthy();
     });
+  });
+
+  it("localizes canonical paths per locale", () => {
+    const english = buildPageMetadata("en", "about");
+    const french = buildPageMetadata("fr", "about");
+
+    expect(english.alternates?.canonical).toBe("/en/about");
+    expect(french.alternates?.canonical).toBe("/fr/about");
   });
 });

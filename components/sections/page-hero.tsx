@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { LocaleLink } from "@/components/layout/locale-link";
 import { Container } from "@/components/ui/container";
 
 type HeroStat = {
@@ -20,6 +19,7 @@ type PageHeroProps = {
   primaryAction: HeroAction;
   secondaryAction: HeroAction;
   stats: readonly HeroStat[];
+  statsCardTitle?: string;
 };
 
 export function PageHero({
@@ -30,6 +30,7 @@ export function PageHero({
   primaryAction,
   secondaryAction,
   stats,
+  statsCardTitle = "Why learners choose D.A Academy",
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden pb-20 pt-28 sm:pb-24 sm:pt-32">
@@ -59,25 +60,25 @@ export function PageHero({
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
+              <LocaleLink
                 href={primaryAction.href}
                 className="inline-flex w-full items-center justify-center rounded-full bg-[color:var(--color-brand-700)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-800)] sm:w-auto"
               >
                 {primaryAction.label}
-              </Link>
-              <Link
+              </LocaleLink>
+              <LocaleLink
                 href={secondaryAction.href}
                 className="inline-flex w-full items-center justify-center rounded-full border border-[color:var(--color-border-strong)] bg-white px-6 py-3 text-sm font-semibold text-[color:var(--color-slate-900)] transition hover:border-[color:var(--color-brand-300)] hover:text-[color:var(--color-brand-700)] sm:w-auto"
               >
                 {secondaryAction.label}
-              </Link>
+              </LocaleLink>
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-[color:var(--color-border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(240,244,251,0.92))] p-6 shadow-[0_30px_80px_rgba(15,23,42,0.10)] sm:p-8">
             <div className="rounded-[1.5rem] bg-[color:var(--color-slate-900)] p-8 text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--color-gold-300)]">
-                Why learners choose D.A Academy
+                {statsCardTitle}
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {stats.map((stat) => (
