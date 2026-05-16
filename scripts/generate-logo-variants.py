@@ -2,7 +2,7 @@ from pathlib import Path
 
 from PIL import Image
 
-SRC = Path("public/images/Logo/DA Language Academy logo.png")
+SRC = Path("public/images/logo/DA Language Academy logo.png")
 OUT_DIR = Path("public/images/logo")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
