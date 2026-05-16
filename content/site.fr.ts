@@ -770,5 +770,8 @@ export const siteContentFr = {
     contact: "Contact",
     language: "Langue",
     applyViaWhatsApp: "S'inscrire via WhatsApp",
+    copyright: "© D.A Language Academy. 2026",
+    designedByLabel: "Conçu par HTwebsolution",
+    designedByHref: "https://htwebsolution.com",
   },
 } as const;

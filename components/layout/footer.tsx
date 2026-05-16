@@ -73,6 +73,22 @@ export function Footer() {
           </div>
         </div>
       </Container>
+
+      <Container className="mt-10 border-t border-white/10 pt-6">
+        <div className="flex flex-col gap-3 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
+          <p>{siteContent.ui.copyright}</p>
+          <p>
+            <Link
+              href={siteContent.ui.designedByHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[color:var(--color-gold-300)]"
+            >
+              {siteContent.ui.designedByLabel}
+            </Link>
+          </p>
+        </div>
+      </Container>
     </footer>
   );
 }

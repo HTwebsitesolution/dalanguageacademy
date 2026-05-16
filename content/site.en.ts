@@ -769,5 +769,8 @@ export const siteContent = {
     contact: "Contact",
     language: "Language",
     applyViaWhatsApp: "Apply via WhatsApp",
+    copyright: "© D.A Language Academy. 2026",
+    designedByLabel: "Designed by HTwebsolution",
+    designedByHref: "https://htwebsolution.com",
   },
 } as const;
